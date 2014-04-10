@@ -104,6 +104,7 @@ get '/auth/facebook/callback' => sub {
 
 register_plugin;
 
+1;
 
 __END__
 
@@ -133,6 +134,7 @@ hook before =>  sub {
   if (not session('fb_username')) {
      redirect auth_fb_authenticate_url;
   }
+
 };
 
 get '/' => sub {
@@ -178,11 +180,10 @@ plugins:
     callback_url: "http://localhost:3000/auth/facebook/callback"
     callback_success: "/"
     callback_fail: "/fail"
-    scope: "email user_birthday"
-C<callback_success>, C<callback_fail> and C<scope> are optional and default to
-'/' , '/fail' and default respectively.
+    scope: "email friends"
 
-check the following url for the various scope L<Facebook login permission|https://developers.facebook.com/docs/facebook-login/permissions>.
+C<callback_success> , C<callback_fail> and <scope> are optional and default to
+'/' , '/fail', and default respectively.
 
 Note that you also need to provide your callback url, whose route handler is automatically
 created by the plugin.
@@ -223,6 +224,7 @@ hook before => sub {
   if (not session('fb_username')) {
     redirect auth_fb_authenticate_url();
   }
+
 };
 
 
@@ -255,8 +257,6 @@ L<Catalyst::Authentication::Credential::Twitter> written by Jesse Stay.
 Prajith Ndimensionz <prajith@ndimensionz>
 
 =item *
-
-Dancer Core Developers
 
 =back
 
