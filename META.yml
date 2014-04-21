@@ -1,0 +1,25 @@
+---
+abstract: 'Authenticate with Facebook OAuth'
+author:
+  - 'Prajith <prajith@ndimensionz.com, prajithpalakkuda@gmail.com>'
+build_requires:
+  ExtUtils::MakeMaker: 0
+configure_requires:
+  ExtUtils::MakeMaker: 0
+dynamic_config: 1
+generated_by: 'ExtUtils::MakeMaker version 6.94, CPAN::Meta::Converter version 2.120351'
+license: unknown
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Dancer-Plugin-Auth-Facebook
+no_index:
+  directory:
+    - t
+    - inc
+requires:
+  Carp: 0
+  Dancer: 0
+  Dancer::Plugin: 0
+  Net::Facebook::Oauth2: 0
+version: 0.03
